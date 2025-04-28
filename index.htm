@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kishan Parmar's Portfolio - Tech Enthusiast | Motivator | Hustler. Explore my projects, skills, and experience.">
+  <meta name="author" content="Kishan Parmar">
+  <meta property="og:title" content="Kishan Parmar | Portfolio">
+  <meta property="og:description" content="Explore Kishan Parmar's portfolio showcasing his skills, projects, and accomplishments in tech and motivation.">
+  <meta property="og:image" content="kishan.jpg">
+  <meta property="og:url" content="https://kishanparmar.com">
+  <title>Kishan Parmar | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Custom Scroll Reveal Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .reveal {
+      visibility: hidden;
+    }
+    .reveal.visible {
+      visibility: visible;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .scale-reveal {
+      visibility: hidden;
+    }
+    .scale-reveal.visible {
+      visibility: visible;
+      animation: scaleIn 1s ease-out forwards;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
+    }
+
+    /* Progress Bar Styles */
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      text-align: center;
+      color: white;
+      line-height: 20px;
+      font-weight: bold;
+    }
+
+    /* Professional Dark Theme */
+    body {
+      background-color: #1a202c;
+      color: #cbd5e0;
+    }
+
+    .nav-bar {
+      background-color: #2d3748;
+    }
+
+    .nav-link:hover {
+      color: #4fd1c5;
+    }
+
+    .button {
+      background-color: #4fd1c5;
+      color: #1a202c;
+    }
+
+    .button:hover {
+      background-color: #38b2ac;
+    }
+
+    .footer {
+      background-color: #2d3748;
+    }
+
+    /* Card styles for skills and projects */
+    .card {
+      background-color: #2d3748;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Notes Section Styles */
+    .notes-card {
+      background-color: #2d3748;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .notes-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .notes-card a {
+      color: #4fd1c5;
+      text-decoration: none;
+    }
+
+    .notes-card a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav-bar fixed top-0 w-full shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6">
+      <h1 class="text-3xl font-bold text-teal-400">Kishan Parmar</h1>
+      <ul class="flex space-x-8 text-gray-300 text-lg">
+        <li><a href="#about" class="nav-link transition-all">About</a></li>
+        <li><a href="#skills" class="nav-link transition-all">Skills</a></li>
+        <li><a href="#projects" class="nav-link transition-all">Projects</a></li>
+        <li><a href="#announcements" class="nav-link transition-all">Announcements</a></li>
+        <li><a href="#notes" class="nav-link transition-all">Notes</a></li>
+        <li><a href="#contact" class="nav-link transition-all">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-32 bg-gradient-to-r from-teal-600 to-teal-800">
+    <h1 class="text-5xl font-extrabold text-white">Kishan Parmar</h1>
+    <p class="text-xl text-gray-200 mt-4">Tech Enthusiast | Motivator | Hustler</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center py-16">
+    <img src="kishan.jpg" alt="Kishan Parmar" class="rounded-full w-64 h-64 object-cover border-8 border-teal-400 shadow-lg scale-reveal">
+    <h2 class="mt-6 text-3xl font-semibold text-white reveal">Welcome to my space!</h2>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-4xl mx-auto py-16 px-6">
+    <h2 class="text-4xl font-bold text-teal-400 mb-6 text-center reveal">About Me</h2>
+    <p class="text-lg text-gray-300 text-center reveal">I'm a passionate Computer Engineer currently studying and working on exciting tech projects. My goal is to guide and inspire youth through motivation, technology, and hustle culture.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-gray-800 py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-teal-400 mb-6 text-center reveal">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Skill 1 -->
+        <div class="card text-center reveal">
+          <h3 class="text-xl font-semibold">HTML</h3>
+          <div class="progress-bar mt-4">
+            <span style="width: 90%; background-color: #4caf50;">90%</span>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="card text-center reveal">
+          <h3 class="text-xl font-semibold">CSS</h3>
+          <div class="progress-bar mt-4">
+            <span style="width: 80%; background-color: #2196f3;">80%</span>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="card text-center reveal">
+          <h3 class="text-xl font-semibold">JavaScript</h3>
+          <div class="progress-bar mt-4">
+            <span style="width: 75%; background-color: #ff9800;">75%</span>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="card text-center reveal">
+          <h3 class="text-xl font-semibold">React</h3>
+          <div class="progress-bar mt-4">
+            <span style="width: 70%; background-color: #61dafb;">70%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Announcements Section -->
+<section id="announcements" class="bg-gray-800 py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-teal-400 mb-6 text-center reveal">Announcements</h2>
+    <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl font-semibold text-teal-400">Exciting news coming soon!</h3>
+      <p class="text-lg text-gray-300 mt-4">Stay tuned for some big updates that will be revealed in the upcoming weeks. We’re working on something special!</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Updated Notes Section for Web Development -->
+<section id="notes" class="bg-gray-800 py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-teal-400 mb-6 text-center reveal">Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Note 1 -->
+      <div class="notes-card p-6 reveal">
+        <h3 class="text-2xl font-semibold text-teal-400">Programming Basics</h3>
+        <p class="text-lg text-gray-300 mt-4">A quick reference guide for programming concepts in various languages like C++, Java, and Python.</p>
+        <a href="notes/programming_basics.pdf" download class="text-lg font-semibold">Download PDF</a>
+      </div>
+
+      <!-- Note 2 (Updated for Web Development) -->
+      <div class="notes-card p-6 reveal">
+        <h3 class="text-2xl font-semibold text-teal-400">Web Development</h3>
+        <p class="text-lg text-gray-300 mt-4">A comprehensive guide to web development, covering HTML fundamentals, CSS, and JavaScript basics.</p>
+        <a href="notes/The%20Ultimate%20HTML%20handbook.pdf" target="_blank" class="text-lg font-semibold">View Ultimate HTML Handbook</a>
+      </div>
+
+      <!-- Note 3 -->
+      <div class="notes-card p-6 reveal">
+        <h3 class="text-2xl font-semibold text-teal-400">Machine Learning Intro</h3>
+        <p class="text-lg text-gray-300 mt-4">An introduction to machine learning, covering basic concepts and algorithms.</p>
+        <a href="notes/machine_learning_intro.pdf" download class="text-lg font-semibold">Download PDF</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-4xl mx-auto py-16 px-6">
+    <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center reveal">Projects</h2>
+
+    <div class="mb-12 reveal">
+      <h3 class="text-3xl font-semibold text-teal-400">Human Reaction Timer using Arduino</h3>
+      <p class="text-lg text-gray-300 mt-4">A fun and simple Arduino project to measure human reaction time by lighting up an LED at random intervals and testing the user's response time.</p>
+    </div>
+
+    <div class="mb-12 reveal">
+      <h3 class="text-3xl font-semibold text-teal-400">Personal Portfolio Website</h3>
+      <p class="text-lg text-gray-300 mt-4">A personal website designed to showcase my projects, skills, and achievements. Built with modern web technologies like HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="text-3xl font-semibold text-teal-400">Mini Machine Learning Projects</h3>
+      <p class="text-lg text-gray-300 mt-4">A collection of small machine learning projects, focusing on data analysis, classification, and prediction using Python and various libraries.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-800 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-teal-400 mb-6 text-center reveal">Get in Touch</h2>
+      <form class="flex flex-col space-y-4">
+        <input type="text" placeholder="Your Name" class="p-4 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400">
+        <input type="email" placeholder="Your Email" class="p-4 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400">
+        <textarea placeholder="Your Message" rows="4" class="p-4 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400"></textarea>
+        <button type="submit" class="button p-4 rounded-lg font-semibold transition-all">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-8 text-gray-500">
+    <p class="text-lg">Connect with me on:</p>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="https://instagram.com/kishan_parmar_70" class="hover:text-teal-400 social-icon"><i class="fab fa-instagram fa-3x transition-all"></i></a>
+      <a href="https://www.youtube.com/@HustlewithKishan" class="hover:text-teal-400 social-icon"><i class="fab fa-youtube fa-3x transition-all"></i></a>
+      <a href="https://www.linkedin.com/in/kishanparmar/" class="hover:text-teal-400 social-icon"><i class="fab fa-linkedin fa-3x transition-all"></i></a>
+      <a href="https://twitter.com/kishan_parmar" class="hover:text-teal-400 social-icon"><i class="fab fa-twitter fa-3x transition-all"></i></a>
+      <a href="https://www.facebook.com/kishanparmar" class="hover:text-teal-400 social-icon"><i class="fab fa-facebook fa-3x transition-all"></i></a>
+    </div>
+    <p class="mt-4">&copy; 2025 Kishan Parmar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal, .scale-reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
