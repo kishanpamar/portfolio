@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta name="description" content="Join the Nexora x OneDiplomas Internship Program for real-world experience in Web Development and Digital Marketing. Paid internship with certificate and mentorship.">
+
+<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Internship Program | Nexora x OneDiplomas</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -319,7 +321,8 @@
                 <label for="semester">Semester</label>
                 <input type="text" id="semester" name="semester" placeholder="Your semester (e.g., 4th)" required>
             </div>
-            <button type="submit">Submit Application</button>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+
         </form>
     </section>
     
@@ -348,6 +351,20 @@
             });
         });
     </script>
+    <script>
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+          sections.forEach(sec => {
+            const top = window.scrollY;
+            const offset = sec.offsetTop - 150;
+            const height = sec.offsetHeight;
+            if (top >= offset && top < offset + height) {
+              sec.classList.add('visible');
+            }
+          });
+        });
+      </script>
+      
 </body>
 
 </html>
