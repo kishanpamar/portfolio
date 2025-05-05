@@ -244,6 +244,39 @@
                 font-size: 1rem;
             }
         }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            nav#navbar {
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background-color: #1c1c1c;
+                padding: 1rem;
+                border-radius: 8px;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            }
+        
+            nav#navbar a {
+                margin: 0.8rem 0;
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+        
+            nav#navbar.show {
+                display: flex;
+            }
+        }
+        
     </style>
 </head>
 
@@ -251,13 +284,17 @@
 
     <header>
         <h1>Nexora x OneDiplomas</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#internship">Internship</a>
-            <a href="#apply">Apply</a>
-            <a href="#contact">Contact</a>
+        <nav id="navbar">
+          <a href="#about">About</a>
+          <a href="#internship">Internship</a>
+          <a href="#apply">Apply</a>
+          <a href="#contact">Contact</a>
         </nav>
-    </header>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </header>
+      
 
     <section id="about" class="about">
         <h2>About Our Collaboration</h2>
@@ -364,7 +401,16 @@
           });
         });
       </script>
-      
+      <script>
+        // Hamburger Menu Toggle
+        const toggleBtn = document.getElementById("menu-toggle");
+        const navbar = document.getElementById("navbar");
+    
+        toggleBtn.addEventListener("click", () => {
+            navbar.classList.toggle("show");
+        });
+    </script>
+    
 </body>
 
 </html>
