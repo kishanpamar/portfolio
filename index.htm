@@ -1,416 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta name="description" content="Join the Nexora x OneDiplomas Internship Program for real-world experience in Web Development and Digital Marketing. Paid internship with certificate and mentorship.">
-
-<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Internship Program | Nexora x OneDiplomas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #121212;
-            color: #f5f5f5;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #1c1c1c;
-            padding: 2rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #f5f5f5;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        nav a {
-            color: #fff;
-            margin-left: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #007bff;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.7s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: #007bff;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .about,
-        .internship-details,
-        .testimonials,
-        .contact,
-        .apply {
-            margin-bottom: 4rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #28a745;
-            color: white;
-            font-weight: 600;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 2rem;
-        }
-
-        .cta-button:hover {
-            background-color: #218838;
-        }
-
-        form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem 2rem;
-            background-color: #2a2a2a;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        form div {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        form label {
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #ccc;
-        }
-        
-        form input {
-            padding: 1rem;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 1rem;
-            background-color: #222;
-            color: #fff;
-            transition: border-color 0.3s ease;
-        }
-        
-        form input:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-        
-        form button {
-            grid-column: span 2;
-            padding: 1rem;
-            background-color: #007bff;
-            color: white;
-            font-weight: 600;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        form button:hover {
-            background-color: #0056b3;
-        }
-        
-        @media (max-width: 768px) {
-            form {
-                grid-template-columns: 1fr;
-            }
-        
-            form button {
-                grid-column: span 1;
-            }
-        }
-        
-        footer {
-            background-color: #1c1c1c;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        footer .social-icons a {
-            color: white;
-            margin: 0 1rem;
-            font-size: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-icons a:hover {
-            color: #007bff;
-        }
-
-        @media (max-width: 1024px) {
-            header {
-                padding: 1.5rem;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            nav a {
-                margin-left: 1rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            .cta-button {
-                width: 100%;
-                padding: 1rem;
-                font-size: 1.2rem;
-            }
-
-            form {
-                padding: 1.5rem;
-            }
-
-            form input,
-            form textarea {
-                font-size: 0.95rem;
-            }
-
-            form button {
-                padding: 1rem;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem;
-            }
-
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            nav a {
-                margin-left: 0.5rem;
-            }
-
-            .cta-button {
-                width: 100%;
-                padding: 1rem;
-                font-size: 1rem;
-            }
-
-            form input,
-            form textarea {
-                font-size: 1rem;
-            }
-
-            form button {
-                font-size: 1rem;
-            }
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #fff;
-        }
-        
-        @media (max-width: 768px) {
-            nav#navbar {
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                background-color: #1c1c1c;
-                padding: 1rem;
-                border-radius: 8px;
-                display: none;
-                flex-direction: column;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            }
-        
-            nav#navbar a {
-                margin: 0.8rem 0;
-            }
-        
-            .menu-toggle {
-                display: block;
-            }
-        
-            nav#navbar.show {
-                display: flex;
-            }
-        }
-        
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kishan Parmar | Portfolio + Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center animate-fade-in-down">
+    <h1 class="text-2xl font-extrabold text-purple-700 tracking-wide">Kishan.</h1>
 
-    <header>
-        <h1>Nexora x OneDiplomas</h1>
-        <nav id="navbar">
-          <a href="#about">About</a>
-          <a href="#internship">Internship</a>
-          <a href="#apply">Apply</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-ellipsis-v"></i>
+    <!-- Hamburger Button (Mobile Only) -->
+    <button id="menu-btn" class="md:hidden text-purple-700 text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Desktop Menu -->
+    <div class="space-x-6 text-gray-700 font-medium hidden md:flex">
+      <a href="#home" class="hover:text-purple-600">Home</a>
+      <a href="#about" class="hover:text-purple-600">About</a>
+      <a href="#projects" class="hover:text-purple-600">Portfolio</a>
+      <a href="#updates" class="hover:text-purple-600">Updates</a>
+      <a href="#news" class="hover:text-purple-600">News</a>
+      <a href="#blogs" class="hover:text-purple-600">Blog</a>
+      <a href="#contact" class="hover:text-purple-600">Contact</a>
+    </div>
+
+    <!-- Talk Button -->
+    <a href="#contact" class="hidden md:inline bg-purple-600 text-white px-5 py-2 rounded-full shadow hover:bg-purple-700 transition duration-300">Let's Talk</a>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+    <ul class="space-y-3 text-gray-700 font-medium">
+      <li><a href="#home" class="block hover:text-purple-600">Home</a></li>
+      <li><a href="#about" class="block hover:text-purple-600">About</a></li>
+      <li><a href="#projects" class="block hover:text-purple-600">Portfolio</a></li>
+      <li><a href="#updates" class="block hover:text-purple-600">Updates</a></li>
+      <li><a href="#news" class="block hover:text-purple-600">News</a></li>
+      <li><a href="#blogs" class="block hover:text-purple-600">Blog</a></li>
+      <li><a href="#contact" class="block hover:text-purple-600">Contact</a></li>
+      <li><a href="#contact" class="block bg-purple-600 text-white text-center py-2 rounded shadow hover:bg-purple-700">Let's Talk</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto px-4 py-20">
+  <div class="md:w-1/2 animate-fade-in-left">
+    <h2 class="text-4xl font-extrabold mb-4 leading-snug">Hi, I'm <span class="text-purple-600">Kishan Parmar</span></h2>
+    <h3 class="text-xl font-semibold mb-4">Computer Engineering Student</h3>
+    <p class="text-gray-600 mb-6">I build cool web projects, share tech blogs, and inspire others with real-life coding and career experiences.</p>
+    <div class="space-x-4">
+      <a href="#contact" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 shadow-md">Hire Me</a>
+      <a href="#projects" class="border border-purple-600 text-purple-600 px-6 py-2 rounded-full hover:bg-purple-50 shadow">See Projects</a>
+    </div>
+    <div class="flex space-x-4 mt-6">
+      <a href="https://www.linkedin.com/in/kishan-parmar-126030326" class="text-purple-600 hover:underline">LinkedIn</a>
+      <a href="https://github.com/your-github" class="text-purple-600 hover:underline">GitHub</a>
+      <a href="https://www.youtube.com/channel/UC9QgF50ETSM21uGds6ETUUg" class="text-purple-600 hover:underline">YouTube</a>
+    </div>
+  </div>
+  <div class="md:w-1/2 mb-10 md:mb-0 text-center animate-fade-in-right">
+    <div class="relative w-72 h-72 mx-auto group transform transition duration-500 hover:scale-105">
+      <div class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 blur-xl opacity-20"></div>
+      <img src="photforweb1-removebg-preview.png" alt="Kishan Parmar" class="w-full h-full object-cover rounded-full border-4 border-purple-600 shadow-xl" />
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="max-w-5xl mx-auto px-4 py-20 animate-fade-in-up">
+  <h2 class="text-4xl font-extrabold mb-8 text-center text-purple-700">About Me</h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        I'm <strong>Kishan Parmar</strong>, a passionate Computer Engineering student from Gujarat. My journey has been about growth through challenges — from low academic beginnings to mastering tech skills. I specialize in building modern websites, solving algorithmic problems with DSA, and creating engaging content around tech and personal development.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        I believe in learning by doing, which is why I consistently work on side projects, share knowledge through blogs and YouTube, and help others grow. I'm also experienced in digital marketing and enjoy blending creativity with technology to make impactful solutions.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-gray-800 font-medium">
+        <div class="bg-purple-100 px-4 py-3 rounded-xl text-center shadow-sm">🔧 Python<br><strong>75%</strong></div>
+        <div class="bg-purple-100 px-4 py-3 rounded-xl text-center shadow-sm">🌐 HTML/CSS<br><strong>99%</strong></div>
+        <div class="bg-purple-100 px-4 py-3 rounded-xl text-center shadow-sm">⚙️ JavaScript<br><strong>55%</strong></div>
+        <div class="bg-purple-100 px-4 py-3 rounded-xl text-center shadow-sm">🧠 DSA<br><strong>85%</strong></div>
+        <div class="bg-purple-100 px-4 py-3 rounded-xl text-center shadow-sm">📈 Digital Marketing<br><strong>95%</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-50 py-16 px-4 animate-fade-in-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-purple-700">My Projects</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg">Lost & Found Portal</h3>
+          <p class="text-sm text-gray-600">Web app for reporting lost/found items.</p>
         </div>
-      </header>
-      
-
-    <section id="about" class="about">
-        <h2>About Our Collaboration</h2>
-        <p>
-            <strong>Nexora</strong> is a dynamic creative agency committed to accelerating business growth through modern digital solutions. We specialize in a wide range of services including Web Development, Graphic Design, Branding, and Digital Marketing. Our mission is to help businesses establish a powerful online presence, enhance their brand identity, and reach their target audience effectively.
-        </p>
-        <br />
-        <p>
-            <strong>OneDiplomas</strong> is an educational platform dedicated to supporting diploma students with valuable academic resources. We offer access to GTU exam papers, paper solutions, syllabus, and much more — all in one place. OneDiplomas is constantly evolving, with new features and platforms under development to further enhance learning and academic success for students.
-        </p>
-        <br />
-        <p>
-            Together, <strong>Nexora</strong> and <strong>OneDiplomas</strong> are proud to launch an internship program that not only offers real-world exposure in digital domains but also empowers students to develop practical skills aligned with industry standards.
-        </p>
-    </section>
-    
-    
-
-    <section id="internship" class="internship-details">
-        <h2>Internship Details</h2>
-        <p>
-          At Nexora, we are offering a professional and flexible internship program designed to help students gain real-world experience in the fields of <strong>Web development</strong>, and <strong>Digital Marketing</strong>.
-        </p>
-        <p>
-          The internship duration ranges from a minimum of <strong>15 days</strong> to <strong>1 to 2 months</strong>, depending on your availability and learning goals. 
-        </p>
-        <p>
-          <strong>All students</strong> are welcome to apply, regardless of their academic background or skill level. This is a <strong>paid internship</strong> that includes:
-          <ul>
-            <li>Official <strong>Joining Letter</strong></li>
-            <li>Completion <strong>Certificate</strong></li>
-            <li>Personalized <strong>Guidance & Mentorship</strong></li>
-            <li>Best-in-class <strong>Practical Learning</strong></li>
-          </ul>
-        </p>
-        <p>
-          This is a great opportunity to enhance your skills, gain industry exposure, and build a strong professional foundation for your career.
-        </p>
-      </section>
-      
-    <section id="apply" class="apply">
-        <h2>Apply for Internship</h2>
-        <form action="https://formspree.io/f/xnnddnzb" method="POST">
-            <div>
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
-            </div>
-            <div>
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-            </div>
-            <div>
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-            </div>
-            <div>
-                <label for="branch">Branch</label>
-                <input type="text" id="branch" name="branch" placeholder="Your branch (e.g., Computer Engineering)" required>
-            </div>
-            <div>
-                <label for="semester">Semester</label>
-                <input type="text" id="semester" name="semester" placeholder="Your semester (e.g., 4th)" required>
-            </div>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
-
-        </form>
-    </section>
-    
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> contact@onediplomas.site</p>
-        <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-    </section>
-
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/kishan-parmar-126030326" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/kishan_parmar_70?igsh=NDEzbWowc3c5aW01" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg">Reaction Time Tester</h3>
+          <p class="text-sm text-gray-600">Arduino + Button + LED hardware project.</p>
         </div>
-    </footer>
+        <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg">Eknath Logistics</h3>
+          <p class="text-sm text-gray-600">Transport website with tracking and admin panel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        window.addEventListener("scroll", () => {
-            document.querySelectorAll("section").forEach(section => {
-                if (section.getBoundingClientRect().top < window.innerHeight - 150) {
-                    section.classList.add("visible");
-                }
-            });
-        });
-    </script>
-    <script>
-        const sections = document.querySelectorAll('section');
-        window.addEventListener('scroll', () => {
-          sections.forEach(sec => {
-            const top = window.scrollY;
-            const offset = sec.offsetTop - 150;
-            const height = sec.offsetHeight;
-            if (top >= offset && top < offset + height) {
-              sec.classList.add('visible');
-            }
-          });
-        });
-      </script>
-      <script>
-        // Hamburger Menu Toggle
-        const toggleBtn = document.getElementById("menu-toggle");
-        const navbar = document.getElementById("navbar");
+  <!-- News Section -->
+<section id="news" class="bg-gradient-to-b from-purple-50 to-white py-16 px-4 animate-fade-in-up">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center text-purple-700 mb-12">Latest News 📰</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-purple-500">
+        <h3 class="text-xl font-semibold text-purple-600">🌟 Smart Gujarat Hackathon 2025</h3>
+        <p class="mt-2 text-gray-600">Our team will present an innovative transport management system. Stay tuned for demo and results!</p>
+        <span class="text-sm text-gray-500 block mt-4">June 2025</span>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-pink-500">
+        <h3 class="text-xl font-semibold text-pink-600">📣 500+ LinkedIn Followers</h3>
+        <p class="mt-2 text-gray-600">Grateful for this achievement. Let’s grow our tech network and share more knowledge!</p>
+        <span class="text-sm text-gray-500 block mt-4">May 2025</span>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-green-500">
+        <h3 class="text-xl font-semibold text-green-600">💼 Internship Planning</h3>
+        <p class="mt-2 text-gray-600">Excited to start offering internships to students and help them gain real-world experience.</p>
+        <span class="text-sm text-gray-500 block mt-4">April 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Updates Section -->
+<section id="updates" class="bg-purple-50 py-16 px-4 animate-fade-in-up">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-purple-700">Recent Updates 🚀</h2>
+    <ul class="space-y-4 text-gray-700 list-disc list-inside">
+      <li>✅ Launched personal portfolio + blog site.</li>
+      <li>📢 Started a YouTube channel: Hustle with Harman.</li>
+      <li>📚 Completed a Digital Marketing certification.</li>
+      <li>👨‍💻 Working on a transportation website (Eknath Logistics).</li>
+      <li>🔍 Looking for internship and collaboration opportunities.</li>
+    </ul>
+  </div>
+</section>
+  <!-- Blogs Section -->
+  <section id="blogs" class="bg-white py-16 px-4 animate-fade-in-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-purple-700">Latest Blogs</h2>
+      <div id="blogContainer" class="space-y-6"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gradient-to-br from-gray-100 to-purple-50 py-16 px-4 animate-fade-in-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-purple-700">Coffee With Me ☕</h2>
+      <p class="mb-6 text-gray-600">Want to talk or collaborate? Just say hi below.</p>
+      <form class="space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border border-purple-200 rounded-lg" required />
+        <input type="email" placeholder="Your Email" class="w-full p-3 border border-purple-200 rounded-lg" required />
+        <textarea placeholder="Your Message" class="w-full p-3 border border-purple-200 rounded-lg" rows="5" required></textarea>
+        <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 shadow-md">Send</button>
+      </form>
+    </div>
+  </section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white mt-20 pt-12 pb-6">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
     
-        toggleBtn.addEventListener("click", () => {
-            navbar.classList.toggle("show");
-        });
-    </script>
-    
+    <!-- About -->
+    <div>
+      <h3 class="text-2xl font-bold text-purple-400 mb-4">Kishan Parmar</h3>
+      <p class="text-gray-400 mb-3">Aspiring Full Stack Developer & Digital Marketer from Gujarat. Passionate about building useful tools and inspiring others through content.</p>
+      <p class="text-gray-500">"Code, Create, Connect."</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-purple-300">Quick Links</h4>
+      <ul class="space-y-2 text-gray-400">
+        <li><a href="#home" class="hover:text-purple-400">Home</a></li>
+        <li><a href="#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="#projects" class="hover:text-purple-400">Projects</a></li>
+        <li><a href="#blogs" class="hover:text-purple-400">Blog</a></li>
+        <li><a href="#contact" class="hover:text-purple-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-purple-300">Contact</h4>
+      <ul class="space-y-2 text-gray-400">
+        <li>Email: <a href="mailto:kishan@example.com" class="hover:text-purple-400">kishan@example.com</a></li>
+        <li>Phone: <a href="tel:+918000000000" class="hover:text-purple-400">+91 80000 00000</a></li>
+        <li>Location: Bhavnagar, Gujarat</li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-purple-300">Stay Connected</h4>
+      <div class="flex space-x-4 mb-4">
+        <a href="https://www.linkedin.com/in/kishan-parmar-126030326" target="_blank" class="hover:text-purple-400">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://github.com/your-github" target="_blank" class="hover:text-purple-400">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UC9QgF50ETSM21uGds6ETUUg" target="_blank" class="hover:text-purple-400">
+          <i class="fab fa-youtube text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/kishan_parmar_70?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-purple-400">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+      </div>
+      <form>
+        <input type="email" placeholder="Your email" class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white mb-2" />
+        <button class="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded text-sm font-semibold">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Bottom line -->
+  <div class="mt-10 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
+    © 2025 Kishan Parmar. Designed with ❤️ and Tailwind CSS. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- Blog Script -->
+  <script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+    const blogs = [
+      {
+        title: "My Journey in Computer Engineering",
+        date: "2025-06-15",
+        content: "In 10th, I scored 56%, failed in 1st & 2nd sem, but now I restarted my life with goals..."
+      },
+      {
+        title: "Why I Started YouTube",
+        date: "2025-06-14",
+        content: "I wanted to inspire others through my journey. My channel Hustle with Harman..."
+      }
+    ];
+    const blogContainer = document.getElementById('blogContainer');
+    blogs.forEach(blog => {
+      const blogPost = document.createElement('div');
+      blogPost.classList = "bg-purple-50 p-6 rounded-lg shadow hover:shadow-md transition";
+      blogPost.innerHTML = `<h3 class='text-xl font-bold text-purple-700'>${blog.title}</h3><p class='text-sm text-gray-500 mb-2'>${blog.date}</p><p>${blog.content}</p>`;
+      blogContainer.appendChild(blogPost);
+    });
+  </script>
+
+  <!-- GSAP Animations -->
+  <script>
+    gsap.from(".animate-fade-in-down", { y: -30, opacity: 0, duration: 1, ease: "power2.out" });
+    gsap.from(".animate-fade-in-left", { x: -50, opacity: 0, duration: 1, delay: 0.3 });
+    gsap.from(".animate-fade-in-right", { x: 50, opacity: 0, duration: 1, delay: 0.3 });
+    gsap.from(".animate-fade-in-up", { y: 30, opacity: 0, duration: 1, stagger: 0.2 });
+  </script>
+
 </body>
-
 </html>
